@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BatchApexMonitor</fullName>
+    <types>
+        <members>JobMonitorCon</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>ApexJobDashboard</members>
+        <members>ApexJobDetail</members>
+        <members>ApexJobIndex</members>
+        <members>ApexJobMonitor</members>
+        <members>ApexJobScheduler</members>
+        <members>ApexJobsByType</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>ionicimages</members>
+        <members>ionicjs</members>
+        <members>ioniclib</members>
+        <name>StaticResource</name>
+    </types>
+    <version>31.0</version>
+</Package>

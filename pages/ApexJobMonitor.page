@@ -1,0 +1,120 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+    <html>
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
+        <title></title>
+
+        <link href="{!URLFOR($Resource.ioniclib,'css/ionic.css')}" rel="stylesheet"/>
+        
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js -->
+        <script src="{!URLFOR($Resource.ioniclib,'js/ionic.bundle.js')}"></script>
+
+
+        <!-- your app's js -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script src="{!URLFOR($Resource.ionicjs,'app.js')}"></script>
+        <script src="{!URLFOR($Resource.ionicjs,'directives.js')}"></script>
+        <script src="{!URLFOR($Resource.ionicjs,'controllers.js')}"></script>
+        <script src="{!URLFOR($Resource.ionicjs,'services.js')}"></script>
+
+        <script>
+            $j = $.noConflict();
+            $j(document).ready(function(){
+                regHandler();
+            });
+
+            function regHandler(){
+              
+              $j('#schBtn').click(function(){
+                  
+                  var selectedCls = '';
+                  var selectedDt = $j('#dtInput').val();
+                  var selectedTm = $j('#tmInput').val();
+                  $( "#clsSelectId option:selected" ).each(function() {
+                    selectedCls += $( this ).text();
+                  });
+
+                  console.log(selectedDt);
+                  console.log(selectedTm);
+                  console.log(selectedCls);
+
+
+
+              });
+
+            }
+
+            function onSchClick(){
+                 
+                  var selectedCls = '';
+                  var selectedOpt = '';
+                  var selectedDt = $j('#dtInput').val();
+                  var selectedTm = $j('#tmInput').val();
+                  var selectedDays = '';
+                  $j( "#clsSelectId option:selected" ).each(function() {
+                    selectedCls += $j( this ).text();
+                  });
+
+                  $j( "#optSelectId option:selected" ).each(function() {
+                    selectedOpt += $j( this ).text();
+                  });
+
+                  $j('input[type=checkbox]').each(function () {
+                      selectedDays = (this.checked ? $j(this).val() : "");
+                  });
+
+                  console.log(selectedDt);
+                  console.log(selectedTm);
+                  console.log(selectedCls);
+                  console.log(selectedOpt);
+                  console.log(selectedDays);
+
+                  JobMonitorCon.scheduleApexJob(selectedCls,selectedDt,selectedTm,selectedOpt,selectedDays,function(result,event){
+                      
+                  });
+
+            }
+
+
+        </script>
+
+      </head>
+      <body ng-app="starter" animation="slide-left-right-ios7">
+        <!-- 
+          The nav bar that will be updated as we navigate between views.
+        -->
+        <ion-nav-bar class="bar-balanced nav-title-slide-ios7">
+          <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+            Back
+          </ion-nav-back-button>
+        </ion-nav-bar>
+        <!-- 
+          The views will be rendered in the <ion-nav-view> directive below
+          Templates are in the /templates folder (but you could also
+          have templates inline in this html file if you'd like).
+        -->
+        
+
+            <!-- 
+              Create tabs with an icon and label, using the tabs-positive style. 
+              Each tab's child <ion-nav-view> directive will have its own 
+              navigation history that also transitions its views in and out.
+            -->
+            
+            <ion-nav-view>
+
+            </ion-nav-view>
+
+        
+      </body>
+    </html>
+
+    
+</apex:page>

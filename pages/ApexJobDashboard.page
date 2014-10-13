@@ -1,0 +1,30 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+    
+    <ion-view title="Dashboard">
+      <ion-content class="has-header padding">
+        <h2 style="text-align:center;">Apex Jobs</h2>
+        <div id="container" drawPieChart=""></div> 
+        <ion-list>
+            <ion-item ng-repeat="job in jobs" href="#/tab/jobs/{{job.type}}">
+
+                <div class="list card">
+
+                  <div class="item item-avatar">
+                    <img src="{!URLFOR($Resource.ionicimages,'eclipse.png')}"></img>
+                    <h2>{{job.type}}</h2>
+                    <p>{{job.count}}</p>
+                  </div>
+                  <div class="item item-body" ng-init="jtype=job.type">
+                    <div chart="chart"></div>
+                  </div>
+                  <a class="item item-icon-left assertive" href="#/tab/jobs/{{job.type}}">
+                    <i class="icon ion-link"></i>
+                    Show Details
+                  </a>
+                </div>
+            </ion-item>
+        </ion-list> 
+        </ion-content>
+    </ion-view>
+    
+</apex:page>

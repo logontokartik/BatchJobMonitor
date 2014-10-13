@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+            <ion-tabs class="tabs-striped tabs-background-positive tabs-light">
+
+
+                  <!-- Dashboard Tab -->
+                  <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
+                    <ion-nav-view name="tab-dash"></ion-nav-view>
+                  </ion-tab>
+
+
+                  <!-- Jobs Tab -->
+                  <ion-tab title="Jobs" icon="icon ion-heart" href="#/tab/jobs">
+                    <ion-nav-view name="tab-jobs"></ion-nav-view>
+                  </ion-tab>
+
+
+                  <!-- Detail Tab -->
+                  <ion-tab title="Apex Job Scheduler" icon="icon ion-gear-b" href="#/tab/scheduler">
+                    <ion-nav-view name="tab-scheduler"></ion-nav-view>
+                  </ion-tab>
+
+
+                </ion-tabs>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+
+	<ion-view title="Apex Job Scheduler">
+	  <ion-content class="has-header">
+	    	Under Construction
+	  </ion-content>
+	</ion-view>
+	
+</apex:page>

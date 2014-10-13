@@ -1,0 +1,20 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+
+    <ion-view title="Apex Jobs">
+      <ion-content class="has-header">
+        <ion-list>
+          <ion-item class="item-icon-left" ng-repeat="job in typejobs" type="item-text-wrap" href="#/tab/job/{{job.asyncJob.id}}">
+            <i class="icon ion-monitor"></i>    
+            <h2>{{job.className}}</h2>
+            {{job.createdByName}} 
+            {{job.asyncJob.CreatedDate | date:'yyyy-MM-dd HH:mm:ss Z'}}
+              <span class="item-note">
+                  {{job.asyncJob.Status}}
+              </span>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-view>
+
+    
+</apex:page>

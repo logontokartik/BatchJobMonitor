@@ -1,0 +1,87 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" controller="JobMonitorCon">
+    <ion-view title="Apex Job Scheduler">
+      <ion-content class="has-header">
+            <div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Choose an Apex Class to Schedule
+                    </div>
+                    <select ng-model="selectedCls" id="clsSelectId">
+                      <option ng-repeat="cls in apexClasses">{{cls.Name}}</option>
+                    </select>
+                 </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Select an option to run
+                    </div>
+                    <select id="optSelectId">
+                      <option>None</option>
+                      <option>Every 1st</option>
+                      <option>2nd</option>
+                      <option>3rd</option>
+                      <option>Last</option>
+                    </select>
+                 </label>
+                <ul class="list">
+
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Mon"></input>
+                     </label>
+                     Monday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Tue"/>
+                     </label>
+                     Tuesday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Wed"/>
+                     </label>
+                     Wednesday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Thu"/>
+                     </label>
+                     Thursday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Fri"/>
+                     </label>
+                     Friday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Sat"/>
+                     </label>
+                     Saturday
+                  </li>
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" value="Sun"/>
+                     </label>
+                     Sunday
+                  </li>
+
+                </ul>
+                <label class="item item-input">
+                    <span class="input-label">Enter Start Date</span>
+                    <input type="date" id="dtInput"/>
+                 </label>
+                <label class="item item-input">
+                    <span class="input-label">Enter Preferred Start Time</span>
+                    <input type="time" id="tmInput"/>
+                 </label>
+                 <button id="schBtn" onclick="onSchClick();" class="button button-block button-dark">
+                  Schedule Job
+                 </button>
+            </div>
+      </ion-content>
+
+    </ion-view>
+    
+</apex:page>
